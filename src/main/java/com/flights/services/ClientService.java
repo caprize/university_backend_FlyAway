@@ -16,13 +16,14 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public String registration(String name, String email, String login, String password, Integer passport) {
+
+    /* TODO
+    * Перенести функционал в админку */
+    public String registration(String name, String email, Integer passport) {
         Client client = Client.newBuilder()
                 .setName(name)
                 .setEmail(email)
-                .setLogin(login)
                 .setPassport(passport)
-                .setPassword(password)
                 .build();
 
         try {
@@ -32,5 +33,9 @@ public class ClientService {
         } catch (Exception e) {
             return Main.GSON.toJson(e.getMessage());
         }
+    }
+
+    public String all() {
+        return Main.GSON.toJson(clientRepository.findAll());
     }
 }

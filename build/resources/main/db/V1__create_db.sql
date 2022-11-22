@@ -14,8 +14,6 @@ CREATE TABLE client (
     id          SERIAL       NOT NULL,
     name        VARCHAR(255) NOT NULL,
     email       VARCHAR(255) DEFAULT NULL,
-    login       VARCHAR(255) NOT NULL,
-    password    VARCHAR(255) NOT NULL,
     passport    INT          NOT NULL,
     CONSTRAINT client_pk PRIMARY KEY (id)
 );

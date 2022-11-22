@@ -3,4 +3,4 @@ CREATE TABLE hibernate_sequence (
 );
 
 INSERT INTO hibernate_sequence
-VALUES (0);
+VALUES (3);

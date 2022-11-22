@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Getter
 public final class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,5 +27,21 @@ public final class Booking {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public Long getFlightId() {
+        return flightId;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

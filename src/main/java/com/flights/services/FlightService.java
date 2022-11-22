@@ -52,8 +52,8 @@ public class FlightService {
         }
     }
 
-    public String get(String endCity, Date start, String timeStart) {
-        return Main.GSON.toJson(flightRepository.findAllByEndCityAndDateStartAndTimeStart(endCity, start, timeStart));
+    public String get(String endCity, String startCity, Date start, String timeStart) {
+        return Main.GSON.toJson(flightRepository.findAllByEndCityAndStartCityAndDateStartAndTimeStart(endCity, startCity, start, timeStart));
     }
 
     public String all() {

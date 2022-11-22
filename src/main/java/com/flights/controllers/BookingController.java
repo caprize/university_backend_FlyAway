@@ -16,7 +16,7 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @PutMapping("/registration")
+    @PostMapping("/registration")
     public @ResponseBody String registration(@RequestParam Integer passport, @RequestParam Long id_flight) {
         return bookingService.registration(passport, id_flight);
     }
@@ -31,8 +31,8 @@ public class BookingController {
         return bookingService.melt(idClient, idFlight);
     }
 
-    @PutMapping("/mailing")
-    public @ResponseBody String mailing(@RequestParam String status) {
-        return bookingService.mailing(status);
-    }
+//    @PutMapping("/mailing")
+//    public @ResponseBody String mailing(@RequestParam String status) {
+//        return bookingService.mailing(status);
+//    }
 }

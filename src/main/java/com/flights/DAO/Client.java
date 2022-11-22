@@ -16,8 +16,6 @@ public final class Client {
 
     private String name;
     private String email;
-    private String login;
-    private String password;
     private Integer passport;
 
     public Long getId() {
@@ -46,16 +44,6 @@ public final class Client {
 
         public Builder setEmail(String email) {
             Client.this.email = email;
-            return this;
-        }
-
-        public Builder setLogin(String login) {
-            Client.this.login = login;
-            return this;
-        }
-
-        public Builder setPassword(String password) {
-            Client.this.password = password;
             return this;
         }
 

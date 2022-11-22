@@ -27,8 +27,9 @@ public class FlightController {
     }
 
     @GetMapping("/get")
-    public @ResponseBody String get(@RequestParam String endCity, Date dateStart, String timeStart) {
-        return flightService.get(endCity, dateStart, timeStart);
+    public @ResponseBody String get(@RequestParam String endCity, @RequestParam String startCity, @RequestParam Date dateStart,
+                                    @RequestParam String timeStart) {
+        return flightService.get(endCity, startCity, dateStart, timeStart);
     }
 
     @GetMapping("/all")
