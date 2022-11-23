@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.Date;
 
 @Controller
@@ -26,14 +27,25 @@ public class FlightController {
         return flightService.add(id_admin, count, date_start, timeStart, cost, timeFlying, from, where);
     }
 
-    @GetMapping("/get")
-    public @ResponseBody String get(@RequestParam String endCity, @RequestParam String startCity, @RequestParam Date dateStart,
+    @GetMapping("/getTime")
+    public @ResponseBody String getTime(@RequestParam String endCity, @RequestParam String startCity, @RequestParam Date dateStart,
                                     @RequestParam String timeStart) {
-        return flightService.get(endCity, startCity, dateStart, timeStart);
+        return flightService.getTime(endCity, startCity, dateStart, timeStart);
+    }
+
+    @GetMapping("/get")
+    public @ResponseBody String get(@RequestParam String endCity, @RequestParam String startCity,
+                                    @RequestParam Date dateStart) {
+        return flightService.get(endCity, startCity, dateStart);
     }
 
     @GetMapping("/all")
     public @ResponseBody String all() {
         return flightService.all();
+    }
+
+    @PostMapping("/status")
+    public @ResponseBody String status(@RequestParam String time, @RequestParam Long idFlight, @RequestParam Date date) {
+        return flightService.changeStatus(time, idFlight, date);
     }
 }

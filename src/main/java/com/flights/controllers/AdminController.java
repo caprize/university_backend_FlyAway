@@ -3,10 +3,7 @@ package com.flights.controllers;
 import com.flights.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -19,8 +16,14 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @GetMapping("/get")
+    @GetMapping()
     public @ResponseBody String get(@RequestParam Integer id) {
         return adminService.get(id);
+    }
+
+    @PostMapping()
+    public @ResponseBody String registration(@RequestParam String name, @RequestParam String email,
+                                             @RequestParam Integer passport) {
+        return adminService.registration(name, email, passport);
     }
 }

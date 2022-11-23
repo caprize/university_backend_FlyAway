@@ -1,6 +1,5 @@
 package com.flights.DAO;
 
-import lombok.Getter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

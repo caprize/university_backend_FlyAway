@@ -1,7 +1,5 @@
 package com.flights.DAO;
 
-import lombok.Getter;
-
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -18,6 +16,7 @@ public final class Flight {
     private Integer cost;
     private String startCity;
     private String endCity;
+    private String status;
 
     public void setCount(Integer count) {
         this.count = count;
@@ -77,5 +76,13 @@ public final class Flight {
 
     public String getEndCity() {
         return endCity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

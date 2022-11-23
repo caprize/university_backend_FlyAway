@@ -1,6 +1,5 @@
 package com.flights.DAO;
 
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.Entity;

@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface BookingRepository extends CrudRepository<Booking, Long> {
     List<Booking> findByClientId(Long clientId);
     Optional<Booking> findBookingByClientIdAndFlightId(Long clientId, Long flightId);
+    List<Booking> findAllByFlightId(Long idFlight);
 }

@@ -7,6 +7,7 @@ CREATE TABLE flight (
     cost         INT             NOT NULL,
     start_city   VARCHAR(255)    NOT NULL,
     end_city     VARCHAR(255)    NOT NULL,
+    status     VARCHAR(255)    NOT NULL,
     CONSTRAINT flight_pk PRIMARY KEY (id)
 );
 

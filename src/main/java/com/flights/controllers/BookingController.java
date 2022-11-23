@@ -31,8 +31,4 @@ public class BookingController {
         return bookingService.melt(idClient, idFlight);
     }
 
-//    @PutMapping("/mailing")
-//    public @ResponseBody String mailing(@RequestParam String status) {
-//        return bookingService.mailing(status);
-//    }
 }

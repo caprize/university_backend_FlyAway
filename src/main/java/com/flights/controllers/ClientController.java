@@ -15,13 +15,6 @@ public class ClientController {
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
     }
-
-    @PostMapping("/registration")
-    public @ResponseBody String registration(@RequestParam String name, @RequestParam String email,
-                                             @RequestParam Integer passport) {
-        return clientService.registration(name, email, passport);
-    }
-
     @GetMapping
     public @ResponseBody String all() {
         return clientService.all();

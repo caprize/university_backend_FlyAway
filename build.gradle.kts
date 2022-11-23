@@ -26,6 +26,9 @@ dependencies {
 
     implementation("javax.xml.bind:jaxb-api:2.3.1")
     implementation("org.glassfish.jaxb:jaxb-runtime:2.3.2")
+
+    implementation("javax.mail:javax.mail-api:1.6.2")
+    implementation("org.springframework.boot:spring-boot-starter-mail:2.2.6.RELEASE")
 }
 
 tasks.getByName<Test>("test") {

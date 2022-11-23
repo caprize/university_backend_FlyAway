@@ -36,9 +36,18 @@ public class BookingService {
 
     public String registration(Integer passport, Long id_flight) {
         Optional<Client> clientOptional = clientRepository.findByPassport(passport);
+        Optional<Flight> flightOptional = flightRepository.findById(id_flight);
 
-        if (clientOptional.isPresent()) {
+        if (clientOptional.isPresent() && flightOptional.isPresent()) {
             Client client = clientOptional.get();
+            Flight flight = flightOptional.get();
+
+            if (flight.getCount() == 0) {
+                return Main.GSON.toJson("All seats on this plane are occupied.");
+            } else {
+                flight.setCount(flight.getCount() - 1);
+                flightRepository.save(flight);
+            }
 
             Booking booking = new Booking();
             booking.setClientId(client.getId());
@@ -99,9 +108,4 @@ public class BookingService {
             return Main.GSON.toJson("Данного заказа не существует.");
         }
     }
-
-//    public String mailing(String status) {
-//
-//    }
-
 }
